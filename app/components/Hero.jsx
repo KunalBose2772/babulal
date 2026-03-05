@@ -95,7 +95,7 @@ export default function Hero() {
           width: 100%;
           max-width: 1400px;
           margin: 0 auto;
-          padding: 32px 64px;
+          padding: 32px 40px;
           display: flex;
           flex-direction: column;
           gap: 22px;
@@ -319,7 +319,7 @@ export default function Hero() {
             flex: 1;
             justify-content: center;
             min-height: calc(100svh - 64px);
-            padding: 28px 22px 100px;
+            padding: 28px 24px 100px;
             gap: 14px;
           }
 

@@ -32,9 +32,10 @@ export default function Navbar() {
           transition: background 0.45s ease, backdrop-filter 0.45s ease, border-color 0.45s ease;
         }
         .navbar.scrolled {
-          background: rgba(10,10,10,0.92);
-          backdrop-filter: blur(14px);
-          border-bottom: 1px solid rgba(198,167,92,0.18);
+          background: #ffffff;
+          backdrop-filter: none;
+          border-bottom: 1px solid rgba(198,167,92,0.25);
+          box-shadow: 0 2px 20px rgba(0,0,0,0.06);
         }
         .navbar.top {
           background: transparent;
@@ -54,8 +55,8 @@ export default function Navbar() {
           height: 56px;
           width: auto;
           object-fit: contain;
-          filter: brightness(0) invert(1);
           display: block;
+          transition: filter 0.45s ease;
         }
         .nav-links {
           display: flex;
@@ -69,9 +70,15 @@ export default function Navbar() {
           font-weight: 600;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: rgba(245,245,245,0.72);
+          color: rgba(245,245,245,0.80);
           transition: color 0.25s ease;
           white-space: nowrap;
+        }
+        .navbar.scrolled .nav-links a {
+          color: rgba(30,20,10,0.75);
+        }
+        .navbar.scrolled .nav-links a:hover {
+          color: #C6A75C !important;
         }
         .nav-links a:hover { color: #C6A75C; }
         .nav-cta {
@@ -161,9 +168,13 @@ export default function Navbar() {
             <header className={`navbar ${scrolled ? 'scrolled' : 'top'}`}>
                 <div className="navbar-inner">
 
-                    {/* Logo */}
+                    {/* Logo — white when transparent, original colors when scrolled */}
                     <a href="/" className="nav-logo">
-                        <img src="/babulal_logo.png" alt="Babulal Premkumar" />
+                        <img
+                            src="/babulal_logo.png"
+                            alt="Babulal Premkumar"
+                            style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
+                        />
                     </a>
 
                     {/* Desktop Nav */}

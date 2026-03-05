@@ -1,0 +1,189 @@
+/* ─── Section ─── */
+.collections {
+    background: #0D0D0D;
+    position: relative;
+}
+
+.collections__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 40px;
+}
+
+/* ─── Header ─── */
+.collections__header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.collections__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C6A75C;
+    margin-bottom: 20px;
+}
+
+.collections__label-bar {
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: #C6A75C;
+    flex-shrink: 0;
+}
+
+.collections__h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    max-width: 760px;
+    margin: 0 auto 20px;
+    letter-spacing: -0.01em;
+}
+
+.collections__sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.78rem, 1vw, 0.88rem);
+    font-weight: 300;
+    color: rgba(245, 245, 245, 0.50);
+    line-height: 1.9;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ─── Grid ─── */
+.collections__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* ─── Card ─── */
+.coll-card {
+    position: relative;
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.coll-card:hover {
+    transform: scale(1.04);
+}
+
+.coll-card__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+/* Gradient overlay */
+.coll-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.15) 100%);
+    transition: background 0.4s ease;
+}
+
+.coll-card:hover .coll-card__overlay {
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.30) 100%);
+}
+
+/* Card content — bottom left */
+.coll-card__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    z-index: 2;
+}
+
+.coll-card__title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+}
+
+.coll-card__sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin: 0 0 14px;
+    max-width: 340px;
+}
+
+.coll-card__link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #C6A75C;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.coll-card:hover .coll-card__link {
+    gap: 10px;
+    color: #E21E26;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+    .collections__inner {
+        padding: 80px 24px;
+    }
+
+    .collections__header {
+        margin-bottom: 40px;
+    }
+
+    .collections__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .coll-card {
+        height: 320px;
+        border-radius: 12px;
+    }
+
+    .coll-card__content {
+        padding: 24px;
+    }
+
+    .coll-card__title {
+        font-size: clamp(1.1rem, 5vw, 1.35rem);
+    }
+
+    .coll-card__sub {
+        font-size: 0.7rem;
+    }
+}
