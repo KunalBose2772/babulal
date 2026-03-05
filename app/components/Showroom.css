@@ -1,0 +1,290 @@
+/* ─── Section ─── */
+.showroom {
+    background: #0D0D0D;
+    position: relative;
+    overflow: hidden;
+}
+
+.showroom__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* ─── Left: Image ─── */
+.showroom__img-outer {
+    position: relative;
+}
+
+/* Offset gold border frame */
+.showroom__img-border {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    right: 20px;
+    bottom: -20px;
+    border: 1.5px solid rgba(198, 167, 92, 0.28);
+    border-radius: 14px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.showroom__img-wrap {
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.showroom__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.04) brightness(0.92);
+    transition: transform 0.9s ease;
+}
+
+.showroom__img-wrap:hover img {
+    transform: scale(1.03);
+}
+
+/* Bottom vignette */
+.showroom__img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
+    border-radius: 12px;
+}
+
+/* "Est. 1920" stamp over image */
+.showroom__img-stamp {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ─── Right: Content ─── */
+.showroom__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.showroom__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C6A75C;
+    margin-bottom: 20px;
+}
+
+.showroom__label-bar {
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: #C6A75C;
+    flex-shrink: 0;
+}
+
+.showroom__h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.2vw, 46px);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.18;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+}
+
+.showroom__divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, #E21E26, #C6A75C);
+    margin-bottom: 24px;
+    transform-origin: left;
+}
+
+.showroom__para {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 1vw, 0.88rem);
+    font-weight: 300;
+    color: rgba(245, 245, 245, 0.55);
+    line-height: 2;
+    margin: 0 0 36px;
+    max-width: 480px;
+}
+
+/* ─── Address block ─── */
+.showroom__address {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 36px;
+    padding: 20px 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    max-width: 420px;
+}
+
+.showroom__address-icon {
+    color: #C6A75C;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.showroom__address-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.85;
+}
+
+.showroom__address-text strong {
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.82rem;
+}
+
+/* ─── CTAs ─── */
+.showroom__ctas {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.showroom__btn-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #E21E26;
+    padding: 14px 30px;
+    border-radius: 5px;
+    border: 1.5px solid #E21E26;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.showroom__btn-primary:hover {
+    background: #c51c23;
+    border-color: #c51c23;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(226, 30, 38, 0.35);
+}
+
+.showroom__btn-secondary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #C6A75C;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 14px 30px;
+    border-radius: 5px;
+    border: 1.5px solid #C6A75C;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    backdrop-filter: blur(8px);
+}
+
+.showroom__btn-secondary:hover {
+    background: #C6A75C;
+    color: #0D0D0D;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(198, 167, 92, 0.28);
+}
+
+/* ─── Quick info ─── */
+.showroom__info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    max-width: 420px;
+}
+
+.showroom__info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: rgba(245, 245, 245, 0.42);
+}
+
+.showroom__info-row svg {
+    color: #C6A75C;
+    flex-shrink: 0;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+    .showroom__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 22px;
+    }
+
+    .showroom__img-wrap {
+        aspect-ratio: 16/10;
+    }
+
+    .showroom__img-border {
+        display: none;
+    }
+
+    .showroom__ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .showroom__btn-primary,
+    .showroom__btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 16px;
+    }
+
+    .showroom__address {
+        max-width: 100%;
+    }
+
+    .showroom__info {
+        max-width: 100%;
+    }
+}

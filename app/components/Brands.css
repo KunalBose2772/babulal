@@ -1,0 +1,142 @@
+/* ─── Section ─── */
+.brands {
+    background: #EFE6D3;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Woven textile texture */
+.brands::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.038;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 3px, #000 3px, #000 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, #000 3px, #000 4px);
+    background-size: 8px 8px;
+}
+
+.brands__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 40px 160px;
+    text-align: center;
+}
+
+/* ─── Header ─── */
+.brands__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C6A75C;
+    margin-bottom: 20px;
+}
+
+.brands__label-bar {
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: #C6A75C;
+    flex-shrink: 0;
+}
+
+.brands__h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 48px);
+    font-weight: 700;
+    color: #1a1008;
+    line-height: 1.2;
+    margin: 0 auto 20px;
+    max-width: 760px;
+    letter-spacing: -0.01em;
+}
+
+.brands__sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 1vw, 0.88rem);
+    font-weight: 300;
+    color: #3a2e20;
+    line-height: 1.9;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.brands__divider {
+    width: 140px;
+    height: 2px;
+    background: #C6A75C;
+    margin: 0 auto 60px auto;
+}
+
+/* ─── Grid ─── */
+.brands__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ─── Logo Item ─── */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 10px;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    color: #1a1008;
+    min-width: 160px;
+    border-bottom: 2px solid transparent;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: translateY(-3px);
+    color: #1F5E8C;
+    border-bottom: 2px solid #E21E26;
+}
+
+/* ─── Closing Line ─── */
+.brands__closing {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-style: italic;
+    color: #6B6255;
+    margin-top: 60px;
+    line-height: 1.7;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+    .brands__inner {
+        padding: 80px 24px;
+    }
+
+    .brands__grid {
+        gap: 40px 30px;
+    }
+
+    .brand-logo {
+        height: 60px;
+        min-width: calc(50% - 15px);
+    }
+}
